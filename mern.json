@@ -52,7 +52,7 @@
       "usage": "arrow-function-s [component-name]",
       "files": [
         {
-          "blueprint-path": "config/blueprints/functional-component.ejs",
+          "blueprint-path": "config/blueprints/arrow-function-component.ejs",
           "target-path": "client/components/<%= helpers.capitalize(name) %>.js"
         }
       ]
@@ -63,7 +63,7 @@
       "usage": "arrow-function-m <module-name>/<component-name>",
       "files": [
         {
-          "blueprint-path": "config/blueprints/functional-component.ejs",
+          "blueprint-path": "config/blueprints/arrow-function-component.ejs",
           "parent-path": "client/modules/<%= helpers.capitalize(parent) %>",
           "target-path": "components/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.js"
         }
