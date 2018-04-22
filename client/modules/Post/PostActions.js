@@ -86,24 +86,24 @@ export const thumbUp = cuid => {
   return {
     type: THUMB_UP,
     cuid
-  };
+  }
 };
 
 export const thumbUpRequest = cuid => {
   return dispatch => {
     return callApi(`posts/${cuid}/up`, 'put').then(() => dispatch(thumbUp(cuid)));
-  };
+  }
 };
 
 export const thumbDown = cuid => {
   return {
     type: THUMB_DOWN,
     cuid
-  };
+  }
 };
 
 export const thumbDownRequest = cuid => {
   return dispatch => {
     return callApi(`posts/${cuid}/down`, 'put').then(() => dispatch(thumbDown(cuid)));
-  };
+  }
 };
