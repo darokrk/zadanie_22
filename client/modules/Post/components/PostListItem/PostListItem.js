@@ -21,7 +21,7 @@ function PostListItem(props) {
         <span>{props.post.voteCount}</span>
         <button onClick={props.thumbUp}>Vote Up</button>
         <a href="#" onClick={props.onDelete}>
-          <FormattedMessage id="deletePost" />
+          <FormattedMessage id="editPost" />
         </a>
       </p>
       <hr className={styles.divider} />
