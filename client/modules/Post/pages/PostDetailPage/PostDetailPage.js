@@ -17,7 +17,6 @@ import { getShowEditPost } from '../../../App/AppReducer';
 export class PostDetailPage extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       name: this.props.post.name,
       title: this.props.post.title,
@@ -75,6 +74,13 @@ export class PostDetailPage extends React.Component {
   }
 }
 
+function mapDispatchToProps(dispatch, props) {
+  return {
+    toggleEditPost: () => dispatch(toggleEditPost()),
+    editPostRequest: (post) => dispatch(editPostRequest(props.params.cuid, post)),
+  };
+}
+
 // Actions required to provide data for this component to render in server side.
 PostDetailPage.need = [params => {
   return fetchPost(params.cuid);
@@ -88,12 +94,6 @@ function mapStateToProps(state, props) {
   };
 }
 
-function mapDispatchToProps(dispatch, props) {
-  return {
-    toggleEditPost: () => dispatch(toggleEditPost()),
-    editPostRequest: (post) => dispatch(editPostRequest(props.params.cuid, post)),
-  };
-}
 
 PostDetailPage.propTypes = {
   post: PropTypes.shape({
